@@ -15,6 +15,8 @@ driver.maximize_window()
 # open the url
 driver.get('https://www.amazon.com/')
 
+###to test in chrome dev tools console. Use syntax $x([locator])...ex: $x("//input[@aria-label='Search Amazon']")
+
 # By ID
 driver.find_element(By.ID, 'twotabsearchtextbox')
 driver.find_element(By.ID, 'nav-search-submit-button')
