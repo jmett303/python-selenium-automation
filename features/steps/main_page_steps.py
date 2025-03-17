@@ -20,7 +20,7 @@ def open_target_main(context):
 def search_product(context, product):
     context.driver.find_element(*SEARCH_FIELD).send_keys(product)   # * = use all elements in parentheses
     context.driver.find_element(*SEARCH_BUTTON).click()
-    sleep(6)
+    sleep(10)
 
 
 @when('Click on cart icon')
