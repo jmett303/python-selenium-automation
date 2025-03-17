@@ -14,7 +14,6 @@ CART_ITEMS = (By.CSS_SELECTOR, '[data-test="cartItem"]')
 
 @when('Add {item} to cart')
 def add_item_to_cart(context, item):
-    # ActionChains(context.driver).move_to_element(context.driver.find_element(*ADD_TO_CART)).click()
     context.driver.find_element(*ADD_TO_CART).click()
     context.driver.find_element(*ADD_TO_CART_2).click()
 
