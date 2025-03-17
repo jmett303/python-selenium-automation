@@ -15,6 +15,7 @@ CART_ITEMS = (By.CSS_SELECTOR, '[data-test="cartItem"]')
 @when('Add {item} to cart')
 def add_item_to_cart(context, item):
     context.driver.find_element(*ADD_TO_CART).click()
+    #or context.driver.find_elements(*ADD_TO_CART)[0].click()  to select first item
     context.driver.find_element(*ADD_TO_CART_2).click()
 
 
@@ -29,9 +30,3 @@ def verify_search_results(context, expected_text):
     actual_text = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
     assert expected_text in actual_text, f'Error. Text {expected_text} not in {actual_text}'
 
-
-@then('Verify item added to cart')
-def verify_item_added(context):
-    cart_items = context.driver.find_elements(*CART_ITEMS)
-    assert len(cart_items) >= 1, f'Error. Expected >= 1 item in cart but got {len(cart_items)}'
-    print(f'{len(cart_items)} item(s) in cart')
