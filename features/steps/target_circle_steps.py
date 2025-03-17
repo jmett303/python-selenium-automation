@@ -11,6 +11,7 @@ BENEFIT_CELLS = (By.CSS_SELECTOR, '.cell-item-content')
 def open_target_circle(context):
     context.driver.get('https://www.target.com/circle')
 
+
 @then('Verify at least {cell_amt} benefit cells shown')
 def verify_benefit_cells(context, cell_amt):
     cell_amt = int(cell_amt)

@@ -1,6 +1,7 @@
 # Created by jacki at 3/13/2025
 Feature: Target search test cases
 
+
   Scenario Outline: User can search for a product on Target
     Given Open target main page
     When Search for <product>
@@ -11,13 +12,13 @@ Feature: Target search test cases
     |iPhone   |iPhone           |
     |dress    |dress            |
 
-#
-#  Scenario: User can search for a iPhone on Target
-#    Given Open target main page
-#    When Search for iPhone
-#    Then Verify correct search results shown for iPhone
-#
-#  Scenario: User can search for a dress on Target
-#    Given Open target main page
-#    When Search for dress
-#    Then Verify correct search results shown for dress
+
+  Scenario: Verify product added to cart
+    Given Open target main page
+    When Search for socks
+    And Add to cart
+    And Store product name
+    And Confirm add to cart
+    And Navigate to Cart
+    Then Verify item added to cart
+    Then Verify cart has correct product

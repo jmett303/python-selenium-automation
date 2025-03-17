@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep, process_time_ns
 
@@ -18,9 +19,9 @@ def open_target_main(context):
 
 @when('Search for {product}')
 def search_product(context, product):
+    context.driver.wait.until(EC.element_to_be_clickable(SEARCH_FIELD), message='Search field not clickable')
     context.driver.find_element(*SEARCH_FIELD).send_keys(product)   # * = use all elements in parentheses
     context.driver.find_element(*SEARCH_BUTTON).click()
-    sleep(10)
 
 
 @when('Click on cart icon')
@@ -31,13 +32,11 @@ def click_cart(context):
 @when('Click sign in')
 def click_sign_in(context):
     context.driver.find_element(*SIGN_IN).click()
-    sleep(1)
 
 
 @when('Click 2nd sign in')
 def click_2nd_sign_in(context):
-    context.driver.find_element(*SIGN_IN_2).click()
-    sleep(1)
+    context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_2)).click()
 
 
 @then('Verify {link_amount} header links are shown')

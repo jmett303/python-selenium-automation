@@ -12,13 +12,16 @@ HELP_OPTIONS = (By.CSS_SELECTOR, '.box-column')
 def open_target_main(context):
     context.driver.get('https://help.target.com/help')
 
+
 @then('Verify Help Header present on page')
 def verify_help_header(context):
     context.driver.find_element(*TARGET_HELP)
 
+
 @then('Verify search box present on page')
 def verify_search_box(context):
     context.driver.find_element(*SEARCH_BOX)
+
 
 @then('Verify Help options present on page')
 def verify_help_options(context):
