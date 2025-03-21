@@ -1,6 +1,11 @@
 # Created by jacki at 3/13/2025
 Feature: Target search test cases
 
+  Scenario: User can search for tea on Target
+    Given Open target main page
+    When Search for tea
+    Then Verify correct search results shown for tea
+
   Scenario Outline: User can search for a product on Target
     Given Open target main page
     When Search for <product>

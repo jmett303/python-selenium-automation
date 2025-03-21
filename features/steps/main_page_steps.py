@@ -14,19 +14,22 @@ SIGN_IN_2 = (By.CSS_SELECTOR, '[data-test="accountNav-signIn"]')
 
 @given('Open target main page')
 def open_target_main(context):
-    context.driver.get('https://target.com/')
+    context.app.main_page.open_main_page()
+    context.driver.wait.until(
+        EC.element_to_be_clickable(SEARCH_FIELD),
+        message='Search field not clickable'
+    )
 
 
-@when('Search for {product}')
-def search_product(context, product):
-    context.driver.wait.until(EC.element_to_be_clickable(SEARCH_FIELD), message='Search field not clickable')
-    context.driver.find_element(*SEARCH_FIELD).send_keys(product)   # * = use all elements in parentheses
-    context.driver.find_element(*SEARCH_BUTTON).click()
+@when('Search for {search_word}')
+def search_product(context, search_word):
+    context.app.header.search(search_word)
 
 
 @when('Click on cart icon')
 def click_cart(context):
-    context.driver.find_element(*CART_ICON).click()
+    # context.driver.find_element(*CART_ICON).click()
+    context.app.main_page.click(*CART_ICON)
 
 
 @when('Click sign in')
