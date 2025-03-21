@@ -59,4 +59,3 @@ def verify_product_name(context):
 def verify_search_results(context, expected_text):
     actual_text = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
     assert expected_text in actual_text, f'Error. Text {expected_text} not in {actual_text}'
-
