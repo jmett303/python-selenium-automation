@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 
-class HeaderPage(Page):
+class Header(Page):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_BUTTON = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 
