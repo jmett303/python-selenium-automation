@@ -21,7 +21,7 @@ Feature: Target search test cases
 
   Scenario: Verify product added to cart
     Given Open target main page
-    When Search for socks
+    When Search for soda
     And Add to cart
     And Store product name
     And Confirm add to cart
