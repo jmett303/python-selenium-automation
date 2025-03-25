@@ -5,6 +5,7 @@ class CartPage(Page):
     CART_EMPTY_TEXT = (By.CSS_SELECTOR, '[data-test="boxEmptyMsg"]')
 
     def verify_cart_is_empty(self):
-        expected_result = 'Your cart is empty'
-        actual_result = self.driver.find_element(*self.CART_EMPTY_TEXT).text
-        assert expected_result == actual_result, f'Error. Text {expected_result} not in {actual_result}'
+        self.verify_text('Your cart is empty', *self.CART_EMPTY_TEXT)
+
+    def verify_cart_page_opens(self):
+        self.verify_url(f'{self.base_url}cart')   #references base_page.py

@@ -58,3 +58,8 @@ def verify_product_name(context):
 @then('Verify correct search results shown for {expected_text}')
 def verify_search_results(context, expected_text):
     context.app.search_results.verify_search_results(expected_text)
+
+
+@then('Verify {expected_text} in URL')
+def verify_results_url(context, expected_text):
+    context.app.search_results.verify_results_url(expected_text)
