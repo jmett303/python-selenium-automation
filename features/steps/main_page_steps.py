@@ -30,7 +30,7 @@ def click_sign_in(context):
 
 
 @when('Click side menu sign in')
-def click_2nd_sign_in(context):
+def click_side_menu_sign_in(context):
     context.app.side_menu.click_side_menu_sign_in()
 
 

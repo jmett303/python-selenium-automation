@@ -6,6 +6,7 @@ from pages.main_page import MainPage
 from pages.side_menu_page import SideMenu
 from pages.sign_in_page import SignIn
 from pages.target_app_page import TargetAppPage
+from pages.t_and_c_page import TermsAndConditionsPage
 
 
 class Application:
@@ -17,5 +18,6 @@ class Application:
         self.main_page = MainPage(driver)
         self.search_results = SearchResultsPage(driver)
         self.side_menu = SideMenu(driver)
-        self.sign_in = SignIn(driver)
+        self.sign_in_page = SignIn(driver)
+        self.t_and_c_page = TermsAndConditionsPage(driver)
         self.target_app_page = TargetAppPage(driver)

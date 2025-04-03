@@ -9,8 +9,11 @@ Feature: Target sign in test cases
 
   Scenario: User can open and close Terms and Conditions from sign in page
     Given Open sign in page
-    When Store original window
-    And Click on Target terms and conditions link (*see image below)
-    And Switch to the newly opened window
+    And Store original window
+    When Click sign in
+    And Click side menu sign in
+    And Click on Target terms and conditions link
+    And Switch to new window
     Then Verify Terms and Conditions page is opened
-    And User can close new window and switch back to original
+    And Close current page
+    And Return to original window
