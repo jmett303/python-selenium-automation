@@ -7,7 +7,6 @@ class Header(Page):
     SIGN_IN = (By.CSS_SELECTOR, '[data-test="@web/AccountLink"]')
 
     def search(self, text):
-        print(f'Searching for {text}')
         self.input_text(text, *self.SEARCH_FIELD)
         self.click(*self.SEARCH_BUTTON)
 

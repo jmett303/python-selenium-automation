@@ -1,6 +1,7 @@
 # Created by jacki at 3/13/2025
 Feature: Target search test cases
 
+  @smoke
   Scenario: User can search for tea on Target
     Given Open target main page
     When Search for tea
@@ -27,7 +28,7 @@ Feature: Target search test cases
     |iPhone   |iPhone           |
     |dress    |dress            |
 
-
+@smoke
   Scenario: Verify product added to cart
     Given Open target main page
     When Search for soda
