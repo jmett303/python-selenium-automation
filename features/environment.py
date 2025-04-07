@@ -10,8 +10,9 @@ from support.logger import logger
 
 
 # Command to run tests with Allure & Behave:
-# behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/target_search.feature
-
+# behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/search_results.feature
+# To generate report, run:
+# allure serve test_results/
 
 
 def browser_init(context, scenario_name):
