@@ -17,3 +17,13 @@ Feature: Target sign in test cases
     Then Verify Terms and Conditions page is opened
     And Close current page
     And Return to original window
+
+  Scenario: Verify incorrect password fails to login
+    Given Open sign in page
+    When Click sign in
+    And Click side menu sign in
+    And Enter correct email: misepad562@ptiong.com
+    And Click continue
+    And Enter incorrect password: Password1234
+    And Click Sign in button
+    Then Verify error message is shown
